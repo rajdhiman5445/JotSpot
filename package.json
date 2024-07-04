@@ -1,0 +1,28 @@
+{
+  "name": "jotspot",
+  "version": "1.0.0",
+  "description": "A simple Note Taking App.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajdhiman5445/JotSpot.git"
+  },
+  "keywords": [
+    "Notes",
+    "JotSpot"
+  ],
+  "author": "Raj Dhiman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajdhiman5445/JotSpot/issues"
+  },
+  "homepage": "https://github.com/rajdhiman5445/JotSpot#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
