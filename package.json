@@ -2,7 +2,6 @@
   "name": "jotspot",
   "version": "1.0.0",
   "description": "A simple Note Taking App.",
-  "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
