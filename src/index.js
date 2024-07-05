@@ -1,38 +1,59 @@
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
 import Home from "./components/Home";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import Header from "./components/Header";
+import Create from "./components/Create";
+import Edit from "./components/Edit";
+import { useEffect, useState } from "react";
+import sampleData from "./data/sample";
+import Favorites from "./components/Favorites";
 
 const AppLayout = () => {
-    return(
+    return (
         <>
-        <Header/>
-        <Outlet/>
+            <Header />
+            <Outlet />
         </>
-    )
-}
+    );
+};
 
-
-const appRouter = createBrowserRouter([
-    {
-        path:"/",
-        element:<AppLayout/>,
-        children:[
-            {
-                path:"/",
-                element:<Home/>
-            },
-            {
-                path:"/favorites",
-                element:<Home/>
-            }
-        ],
-        errorElement:<Error/>
-    },
+const RouterWrapper = () => {
+    const [notes, setNotes] = useState( JSON.parse(localStorage.getItem('notesData')) || []);
+    useEffect(()=>{
+        localStorage.setItem('notesData', JSON.stringify(notes))
+    }, [notes])
     
-]);
 
+    const appRouter = createBrowserRouter([
+        {
+            path: "/",
+            element: <AppLayout/>,
+            children: [
+                {
+                    path: "/",
+                    element: <Home notes={notes} setNotes={setNotes}/>
+                },
+                {
+                    path: "/favorites",
+                    element: <Favorites notes={notes} setNotes={setNotes}/>
+                },
+                
+            ],
+            errorElement: <Error />
+        },
+        {
+            path: "/create",
+            element: <Create notes={notes} setNotes={setNotes} /> 
+        },
+        {
+            path: "/edit/:id",
+            element: <Edit notes={notes} setNotes={setNotes}/>
+        },
+    ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<RouterProvider router={appRouter}/>);
+    return <RouterProvider router={appRouter} />;
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterWrapper />);

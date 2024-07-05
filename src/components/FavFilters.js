@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const Filters = ({notes, setNotes}) => {
+const FavFilters = ({notes, setNotes}) => {
     
     const [reversed, setReversed] = useState(JSON.parse(localStorage.getItem('order')) || false);
 
     return(
         <div className="flex ml-10 mr-10 mt-10 justify-between">
             <div className="flex">
-                <Link to="/"><button className="text-[#0DBD79] mr-2 cursor-pointer font-extrabold">All Notes</button></Link>
+                <Link to="/"><button className="text-[#0DBD79] mr-2 cursor-pointer ">All Notes</button></Link>
                 <div className="text-[#0DBD79] cursor-none"> | </div>
-                <Link to="/favorites"><div className="text-[#0DBD79] ml-2 cursor-pointer ">Favorite Notes</div></Link>
+                <Link to="/favorites"><div className="text-[#0DBD79] ml-2 cursor-pointer font-extrabold">Favorite Notes</div></Link>
             </div>
             <div className="flex">
                 <button className="text-[#0DBD79] mr-2 cursor-pointer">Date Modified</button>
@@ -22,4 +22,4 @@ const Filters = ({notes, setNotes}) => {
     )
 }
 
-export default Filters;
+export default FavFilters;
