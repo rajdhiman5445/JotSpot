@@ -13,7 +13,7 @@ const FavFilters = ({notes, setNotes}) => {
                 <Link to="/favorites"><div className="text-[#0DBD79] ml-2 cursor-pointer font-extrabold">Favorite Notes</div></Link>
             </div>
             <div className="flex">
-                <button className="text-[#0DBD79] mr-2 cursor-pointer">Date Modified</button>
+                <button className="text-[#0DBD79] mr-2 cursor-pointer">Date</button>
                 <div className="text-[#0DBD79] cursor-none"> | </div>
                 <div onClick={()=>{setNotes(prev => [...prev].reverse()); setReversed(prev => !prev); localStorage.setItem('order', JSON.stringify(reversed))}} className="text-[#0DBD79] ml-2 font-extrabold cursor-pointer">{`${reversed?"↑":"↓"}`}</div>
             </div>
