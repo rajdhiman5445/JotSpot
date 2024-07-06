@@ -28,9 +28,9 @@ const Search = ({notes}) => {
     return(
         <>
         <div className="flex justify-evenly">
-            <img src={Logo} className="w-14 mt-6 ml-2" />
-            <input type="text" onKeyDown={handleKeyDown} value={searched} onChange={(e) => {setSearched(e.target.value)}} autoFocus className="w-10/12 h-14 text-xl p-2 mt-6 ml-2 border-2 rounded-xl border-green-500 focus:border-green-500 focus:outline-none" />
-            <div onClick={()=>navigate("/")} className="mt-9 ml-2 mr-3 text-3xl text-green-500 cursor-pointer">X</div>
+            <img onClick={()=>navigate("/")} src={Logo} className="w-14 mt-6 ml-2 cursor-pointer" />
+            <input type="text" onKeyDown={handleKeyDown} value={searched} onChange={(e) => {setSearched(e.target.value)}} autoFocus className="w-10/12 h-14 text-xl p-2 mt-6 ml-2 border-2 rounded-xl border-[#0DBD79] focus:border-[#0DBD79] focus:outline-none" />
+            <div onClick={()=>navigate("/")} className="mt-9 ml-2 mr-3 text-3xl text-[#0DBD79] cursor-pointer">X</div>
         </div>
         <div>
         {(searchResult.length)?(
