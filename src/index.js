@@ -6,14 +6,15 @@ import Header from "./components/Header";
 import Create from "./components/Create";
 import Edit from "./components/Edit";
 import { useEffect, useState } from "react";
-import sampleData from "./data/sample";
 import Favorites from "./components/Favorites";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
     return (
         <>
             <Header />
             <Outlet />
+            <Footer/>
         </>
     );
 };
