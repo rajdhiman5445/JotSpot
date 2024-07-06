@@ -8,6 +8,7 @@ import Edit from "./components/Edit";
 import { useEffect, useState } from "react";
 import Favorites from "./components/Favorites";
 import Footer from "./components/Footer";
+import Search from "./components/Search";
 
 const AppLayout = () => {
     return (
@@ -51,6 +52,10 @@ const RouterWrapper = () => {
             path: "/edit/:id",
             element: <Edit notes={notes} setNotes={setNotes}/>
         },
+        {
+            path: "/search",
+            element: <Search notes={notes}/>
+        }
     ]);
 
     return <RouterProvider router={appRouter} />;
