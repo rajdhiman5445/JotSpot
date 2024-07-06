@@ -2,6 +2,7 @@ import Logo from "../files/logo_green.svg"
 import Git from "../files/github.png"
 import { Link } from "react-router-dom"
 import Tree from "../files/walking.gif"
+import profile from "../files/profile.svg"
 
 const Footer = () => {
     return(
@@ -13,6 +14,8 @@ const Footer = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 bg-gray-950"><img src={Tree} className="w-28 bg-gray-950"/></div>
                 <div className="bg-gray-950 flex justify-center item-center mt-5">
+                    <Link to="https://www.instagram.com/rajdhiman5445/" target="_blank" rel="noopener noreferrer"><img src={profile} className="w-6 bg-gray-950" /></Link>
+                    <div className="bg-gray-950 w-2"> </div>
                     <Link to="https://github.com/rajdhiman5445/JotSpot" target="_blank" rel="noopener noreferrer"><img src={Git} className="w-6 bg-gray-950" /></Link>
                 </div>
                 <div className="bg-gray-950 mt-4">Made with 🍀 in India</div>
