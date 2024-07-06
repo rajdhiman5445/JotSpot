@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="flex justify-center item-center bg-gray-950">
                 <img src={Logo} className="w-28 bg-gray-950 " />
                 </div>
-                <div className="absolute bottom-0 left-0 mt-2 bg-gray-950"><img src={Tree} className="w-28 bg-gray-950"/></div>
+                <div className="absolute bottom-0 left-0 bg-gray-950"><img src={Tree} className="w-28 bg-gray-950"/></div>
                 <div className="bg-gray-950 flex justify-center item-center mt-5">
                     <Link to="https://github.com/rajdhiman5445/JotSpot" target="_blank" rel="noopener noreferrer"><img src={Git} className="w-6 bg-gray-950" /></Link>
                 </div>
